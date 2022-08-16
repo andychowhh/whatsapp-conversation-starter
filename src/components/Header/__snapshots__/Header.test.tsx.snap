@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly by snapshot 1`] = `
+<div>
+  <div
+    class="chakra-stack css-0"
+  >
+    <h2
+      class="chakra-heading css-0"
+    >
+      Start Whatsapp Conversation
+    </h2>
+    <p
+      class="chakra-text css-0"
+    >
+      No need to add extra person in your contacts!
+    </p>
+  </div>
+</div>
+`;

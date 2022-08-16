@@ -1,19 +1,16 @@
 import React, { useState, ChangeEvent } from "react";
 import "./App.css";
 import {
-  Box,
   Button,
   Flex,
-  Heading,
   Input,
   InputGroup,
   InputLeftAddon,
   Stack,
-  Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { WHATSAPP_BASE_URL } from "constants/constants";
+import Header from "components/Header";
 
 function App() {
   const [countryCode, setCountryCode] = useState<string>("852");
@@ -29,14 +26,7 @@ function App() {
   return (
     <Flex justify={"center"} align={"center"} minH={"100vh"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"4xl"} textAlign="center">
-            Start Whatsapp Conversation
-          </Heading>
-          <Text fontSize={"lg"} color={"gray.600"} textAlign="center">
-            No need to add extra person in your contacts!
-          </Text>
-        </Stack>
+        <Header />
         <Flex
           direction="column"
           justify={"center"}
