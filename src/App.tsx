@@ -12,12 +12,18 @@ import {
 import { WHATSAPP_BASE_URL } from "constants/constants";
 import Header from "components/Header";
 
+import { isStrNumber } from "utils/utils";
+
 function App() {
   const [countryCode, setCountryCode] = useState<string>("852");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void =>
-    setPhoneNumber(event.target.value);
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const value = event.target.value;
+    if (isStrNumber(value) || value === "") {
+      setPhoneNumber(value);
+    }
+  };
 
   const onStartConversationButtonClick = (): void => {
     window.open(`${WHATSAPP_BASE_URL}/${countryCode}${phoneNumber}`, "_blank");
