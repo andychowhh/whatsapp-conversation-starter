@@ -13,7 +13,7 @@ exports[`Header renders correctly by snapshot 1`] = `
     <p
       class="chakra-text css-0"
     >
-      No need to add extra person in your contacts!
+      No need to add an extra person in your contacts!
     </p>
   </div>
 </div>

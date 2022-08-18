@@ -8,7 +8,7 @@ function Header() {
         Start Whatsapp Conversation
       </Heading>
       <Text fontSize={"lg"} color={"gray.600"} textAlign="center">
-        No need to add extra person in your contacts!
+        No need to add an extra person in your contacts!
       </Text>
     </Stack>
   );
