@@ -43,7 +43,13 @@ function App() {
 
   return (
     <Flex justify={"center"} align={"center"} minH={"100vh"}>
-      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+      <Stack
+        spacing={8}
+        mx={"auto"}
+        maxW={"lg"}
+        px={{ base: 2, md: 6 }}
+        py={12}
+      >
         <Header />
         <Flex
           direction="column"
@@ -51,7 +57,8 @@ function App() {
           align={"center"}
           rounded={"lg"}
           boxShadow={"lg"}
-          p={8}
+          px={{ base: 4, md: 6 }}
+          py={8}
         >
           <InputGroup m="auto">
             <Select
