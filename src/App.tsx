@@ -5,17 +5,18 @@ import {
   Flex,
   Input,
   InputGroup,
-  InputLeftAddon,
+  Select,
   Stack,
 } from "@chakra-ui/react";
+import Header from "components/Header";
 
 import { WHATSAPP_BASE_URL } from "constants/constants";
-import Header from "components/Header";
+import { COUNTRY_CODE } from "constants/countryCode";
 
 import { isStrNumber } from "utils/utils";
 
 function App() {
-  const [countryCode, setCountryCode] = useState<string>("852");
+  const [countryCode, setCountryCode] = useState<string>("HK");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -26,7 +27,14 @@ function App() {
   };
 
   const onStartConversationButtonClick = (): void => {
-    window.open(`${WHATSAPP_BASE_URL}/${countryCode}${phoneNumber}`, "_blank");
+    const dialCode = COUNTRY_CODE.find((item) => item.code === countryCode)
+      ?.dial_code;
+    if (dialCode)
+      window.open(`${WHATSAPP_BASE_URL}/${dialCode}${phoneNumber}`, "_blank");
+  };
+
+  const onSelectCountryCode = (event: ChangeEvent<HTMLSelectElement>): void => {
+    setCountryCode(event.target.value);
   };
 
   return (
@@ -42,10 +50,22 @@ function App() {
           p={8}
         >
           <InputGroup m="auto">
-            <InputLeftAddon children={`+${countryCode}`} />
+            <Select
+              bgColor="#EDF2F7"
+              w="auto"
+              onChange={onSelectCountryCode}
+              value={countryCode}
+            >
+              {COUNTRY_CODE.map((code) => (
+                <option key={code.code} value={code.code}>
+                  {`${code.dial_code} (${code.code})`}
+                </option>
+              ))}
+            </Select>
             <Input
               type="tel"
               placeholder="phone number"
+              ml="2px"
               value={phoneNumber}
               onChange={handleInputChange}
             />
