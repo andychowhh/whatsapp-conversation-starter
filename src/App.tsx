@@ -19,6 +19,10 @@ function App() {
   const [countryCode, setCountryCode] = useState<string>("HK");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
 
+  const countryCodesByAlphaOrder = COUNTRY_CODE.sort((a, b) =>
+    a.code.localeCompare(b.code)
+  );
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const value = event.target.value;
     if (isStrNumber(value) || value === "") {
@@ -56,7 +60,7 @@ function App() {
               onChange={onSelectCountryCode}
               value={countryCode}
             >
-              {COUNTRY_CODE.map((code) => (
+              {countryCodesByAlphaOrder.map((code) => (
                 <option key={code.code} value={code.code}>
                   {`${code.dial_code} (${code.code})`}
                 </option>
