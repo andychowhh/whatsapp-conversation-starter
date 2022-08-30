@@ -1,18 +1,18 @@
-import React, { useState, ChangeEvent } from "react";
-import "./App.css";
-import { Flex, Input, InputGroup, Stack } from "@chakra-ui/react";
+import React, { useState, ChangeEvent } from 'react';
+import './App.css';
+import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
 
-import DialCodeSelect from "components/DialCodeSelect";
-import Header from "components/Header";
-import StartConversationButton from "components/StartConversationButton";
+import DialCodeSelect from 'components/DialCodeSelect';
+import Header from 'components/Header';
+import StartConversationButton from 'components/StartConversationButton';
 
-import { COUNTRY_CODE } from "constants/countryCode";
+import { COUNTRY_CODE } from 'constants/countryCode';
 
-import { isStrNumber } from "utils/utils";
+import { isStrNumber } from 'utils/utils';
 
 function App() {
-  const [countryCode, setCountryCode] = useState<string>("HK");
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [countryCode, setCountryCode] = useState<string>('HK');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const countryCodesByAlphaOrder = COUNTRY_CODE.sort((a, b) =>
     a.code.localeCompare(b.code)
@@ -20,7 +20,7 @@ function App() {
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const value = event.target.value;
-    if (isStrNumber(value) || value === "") {
+    if (isStrNumber(value) || value === '') {
       setPhoneNumber(value);
     }
   };
@@ -30,24 +30,22 @@ function App() {
   };
 
   return (
-    <Flex justify={"center"} align={"center"} minH={"100vh"}>
+    <Flex justify={'center'} align={'center'} minH={'100vh'}>
       <Stack
         spacing={8}
-        mx={"auto"}
-        maxW={"lg"}
+        mx={'auto'}
+        maxW={'lg'}
         px={{ base: 2, md: 6 }}
-        py={12}
-      >
+        py={12}>
         <Header />
         <Flex
           direction="column"
-          justify={"center"}
-          align={"center"}
-          rounded={"lg"}
-          boxShadow={"lg"}
+          justify={'center'}
+          align={'center'}
+          rounded={'lg'}
+          boxShadow={'lg'}
           px={{ base: 4, md: 6 }}
-          py={8}
-        >
+          py={8}>
           <InputGroup m="auto">
             <DialCodeSelect
               value={countryCode}
