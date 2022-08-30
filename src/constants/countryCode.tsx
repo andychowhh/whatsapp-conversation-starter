@@ -1,4 +1,6 @@
-export const COUNTRY_CODE = [
+import { CountryCode } from "types/types";
+
+export const COUNTRY_CODE: CountryCode[] = [
   {
     name: "Afghanistan",
     dial_code: "93",

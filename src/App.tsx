@@ -1,18 +1,11 @@
 import React, { useState, ChangeEvent } from "react";
 import "./App.css";
-import {
-  Button,
-  Flex,
-  Input,
-  InputGroup,
-  Select,
-  Stack,
-} from "@chakra-ui/react";
+import { Flex, Input, InputGroup, Stack } from "@chakra-ui/react";
 
+import DialCodeSelect from "components/DialCodeSelect";
 import Header from "components/Header";
 import StartConversationButton from "components/StartConversationButton";
 
-import { WHATSAPP_BASE_URL } from "constants/constants";
 import { COUNTRY_CODE } from "constants/countryCode";
 
 import { isStrNumber } from "utils/utils";
@@ -30,13 +23,6 @@ function App() {
     if (isStrNumber(value) || value === "") {
       setPhoneNumber(value);
     }
-  };
-
-  const onStartConversationButtonClick = (): void => {
-    const dialCode = COUNTRY_CODE.find((item) => item.code === countryCode)
-      ?.dial_code;
-    if (dialCode)
-      window.open(`${WHATSAPP_BASE_URL}/${dialCode}${phoneNumber}`, "_blank");
   };
 
   const onSelectCountryCode = (event: ChangeEvent<HTMLSelectElement>): void => {
@@ -63,18 +49,11 @@ function App() {
           py={8}
         >
           <InputGroup m="auto">
-            <Select
-              bgColor="#EDF2F7"
-              w="auto"
-              onChange={onSelectCountryCode}
+            <DialCodeSelect
               value={countryCode}
-            >
-              {countryCodesByAlphaOrder.map((code) => (
-                <option key={code.code} value={code.code}>
-                  {`${code.dial_code} (${code.code})`}
-                </option>
-              ))}
-            </Select>
+              options={countryCodesByAlphaOrder}
+              onChange={onSelectCountryCode}
+            />
             <Input
               type="tel"
               placeholder="phone number"
