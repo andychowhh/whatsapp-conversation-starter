@@ -8,7 +8,9 @@ import {
   Select,
   Stack,
 } from "@chakra-ui/react";
+
 import Header from "components/Header";
+import StartConversationButton from "components/StartConversationButton";
 
 import { WHATSAPP_BASE_URL } from "constants/constants";
 import { COUNTRY_CODE } from "constants/countryCode";
@@ -81,15 +83,10 @@ function App() {
               onChange={handleInputChange}
             />
           </InputGroup>
-          <Button
-            colorScheme="teal"
-            size="md"
-            mt={4}
-            w="100%"
-            onClick={onStartConversationButtonClick}
-          >
-            Start Conversation
-          </Button>
+          <StartConversationButton
+            countryCode={countryCode}
+            phoneNumber={phoneNumber}
+          />
         </Flex>
       </Stack>
     </Flex>
