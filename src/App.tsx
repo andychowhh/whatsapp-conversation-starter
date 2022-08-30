@@ -36,7 +36,8 @@ function App() {
         mx={'auto'}
         maxW={'lg'}
         px={{ base: 2, md: 6 }}
-        py={12}>
+        py={12}
+      >
         <Header />
         <Flex
           direction="column"
@@ -45,7 +46,8 @@ function App() {
           rounded={'lg'}
           boxShadow={'lg'}
           px={{ base: 4, md: 6 }}
-          py={8}>
+          py={8}
+        >
           <InputGroup m="auto">
             <DialCodeSelect
               value={countryCode}

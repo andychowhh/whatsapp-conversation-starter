@@ -1,1 +1,1 @@
-export const WHATSAPP_BASE_URL = "https://wa.me"
+export const WHATSAPP_BASE_URL = 'https://wa.me';

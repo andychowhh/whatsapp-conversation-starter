@@ -1,7 +1,7 @@
-import React, { ChangeEvent } from "react";
-import { Select } from "@chakra-ui/react";
+import React, { ChangeEvent } from 'react';
+import { Select } from '@chakra-ui/react';
 
-import { CountryCode } from "types/types";
+import { CountryCode } from 'types/types';
 
 interface DialCodeSelectProp {
   value: string;
