@@ -30,21 +30,15 @@ function App() {
   };
 
   return (
-    <Flex justify={'center'} align={'center'} minH={'100vh'}>
-      <Stack
-        spacing={8}
-        mx={'auto'}
-        maxW={'lg'}
-        px={{ base: 2, md: 6 }}
-        py={12}
-      >
+    <Flex justify="center" align="center" minH="100vh">
+      <Stack spacing={8} mx="auto" maxW="lg" px={{ base: 2, md: 6 }} py={12}>
         <Header />
         <Flex
           direction="column"
-          justify={'center'}
-          align={'center'}
-          rounded={'lg'}
-          boxShadow={'lg'}
+          justify="center"
+          align="center"
+          rounded="lg"
+          boxShadow="lg"
           px={{ base: 4, md: 6 }}
           py={8}
         >

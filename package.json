@@ -45,7 +45,13 @@
       "react-app",
       "react-app/jest",
       "prettier"
-    ]
+    ],
+    "rules": {
+      "react/jsx-curly-brace-presence": [
+        2,
+        "never"
+      ]
+    }
   },
   "browserslist": {
     "production": [
