@@ -3,7 +3,7 @@ import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
 
 import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
-import { COUNTRY_CODE } from 'constants/countryCode';
+import { COUNTRY_CODE } from 'constants/';
 
 import { isStrNumber } from 'utils';
 
@@ -44,7 +44,6 @@ function App() {
           <InputGroup m="auto">
             <DialCodeSelect
               value={countryCode}
-              options={countryCodesByAlphaOrder}
               onChange={onSelectCountryCode}
             />
             <Input
