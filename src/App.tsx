@@ -1,14 +1,13 @@
 import React, { useState, ChangeEvent } from 'react';
-import './App.css';
 import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
 
-import DialCodeSelect from 'components/DialCodeSelect';
-import Header from 'components/Header';
-import StartConversationButton from 'components/StartConversationButton';
+import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
 import { COUNTRY_CODE } from 'constants/countryCode';
 
-import { isStrNumber } from 'utils/utils';
+import { isStrNumber } from 'utils';
+
+import './App.css';
 
 function App() {
   const [countryCode, setCountryCode] = useState<string>('HK');

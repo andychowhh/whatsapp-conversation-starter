@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { isStrNumber } from './utils';
+import { isStrNumber } from './isStrNumber';
 
-describe('isCharNumber', () => {
+describe('isStrNumber', () => {
   it('return true when the char is a number', () => {
     const result = isStrNumber('123');
     expect(result).toEqual(true);

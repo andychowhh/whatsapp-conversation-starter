@@ -1,4 +1,4 @@
-import { CountryCode } from 'types/types';
+import { CountryCode } from 'types';
 
 export const COUNTRY_CODE: CountryCode[] = [
   {

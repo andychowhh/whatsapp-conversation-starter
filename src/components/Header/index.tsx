@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading, Stack, Text } from '@chakra-ui/react';
 
-function Header() {
+export function Header() {
   return (
     <Stack align="center">
       <Heading fontSize="4xl" textAlign="center">
@@ -13,5 +13,3 @@ function Header() {
     </Stack>
   );
 }
-
-export default Header;

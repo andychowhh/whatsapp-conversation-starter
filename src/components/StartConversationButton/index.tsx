@@ -1,15 +1,14 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 
-import { WHATSAPP_BASE_URL } from 'constants/constants';
-import { COUNTRY_CODE } from 'constants/countryCode';
+import { WHATSAPP_BASE_URL, COUNTRY_CODE } from 'constants/';
 
 interface StartConversationButtonProp {
   countryCode: string;
   phoneNumber: string;
 }
 
-function StartConversationButton({
+export function StartConversationButton({
   countryCode,
   phoneNumber
 }: StartConversationButtonProp) {
@@ -32,5 +31,3 @@ function StartConversationButton({
     </Button>
   );
 }
-
-export default StartConversationButton;

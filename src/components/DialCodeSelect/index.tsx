@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { Select } from '@chakra-ui/react';
 
-import { CountryCode } from 'types/types';
+import { CountryCode } from 'types';
 
 interface DialCodeSelectProp {
   value: string;
@@ -9,7 +9,11 @@ interface DialCodeSelectProp {
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-function DialCodeSelect({ value, options, onChange }: DialCodeSelectProp) {
+export function DialCodeSelect({
+  value,
+  options,
+  onChange
+}: DialCodeSelectProp) {
   return (
     <Select bgColor="#EDF2F7" w="auto" onChange={onChange} value={value}>
       {options.map((option) => (
@@ -20,5 +24,3 @@ function DialCodeSelect({ value, options, onChange }: DialCodeSelectProp) {
     </Select>
   );
 }
-
-export default DialCodeSelect;
