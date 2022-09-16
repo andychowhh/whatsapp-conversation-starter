@@ -34,16 +34,19 @@ describe('DialCodeSelect', () => {
     };
     render(<DialCodeSelect {...mockProp} />);
 
+    const dialCodeSelect = screen.getByTestId('dial-code-select');
+
+    expect(dialCodeSelect).toBeDefined();
+    expect(dialCodeSelect).not.toBeNull();
     expect(mockOnChange).toHaveBeenCalledTimes(0);
 
-    // await waitFor(() => screen.getByText('93 (AF)'));
+    fireEvent.keyDown(dialCodeSelect.firstChild!!, { key: 'ArrowDown' });
+    await waitFor(() => screen.getByText('93 (AF)'));
 
-    // fireEvent.click(screen.getByText('93 (AF)'));
+    fireEvent.change(dialCodeSelect, {
+      target: { value: 'AF' }
+    });
 
-    // expect(mockOnChange).toHaveBeenCalledTimes(1);
-    // expect(mockOnChange).toHaveBeenCalledWith({
-    //   label: 'AF',
-    //   value: 'AF'
-    // });
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
 });
