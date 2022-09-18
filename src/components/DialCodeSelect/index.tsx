@@ -9,6 +9,7 @@ import Select, {
 } from 'react-select';
 import { Box, HStack } from '@chakra-ui/react';
 import CountryFlags from 'country-flag-icons/react/3x2';
+import { hasFlag } from 'country-flag-icons';
 
 import { COUNTRY_CODE } from 'constants/';
 
@@ -44,7 +45,9 @@ const { Option, SingleValue } = components;
 
 const IconOption = (props: OptionProps<ReactSelectOption>) => {
   const { label, value, dialCode } = props.data;
-  const CountryFlag = CountryFlags['HK'];
+  const CountryFlag = hasFlag(value)
+    ? CountryFlags[value as keyof typeof CountryFlags]
+    : () => <></>;
 
   return (
     <Option {...props}>
@@ -83,6 +86,7 @@ export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
     <Select
       options={dialCodeOptions}
       value={value}
+      isSearchable={false}
       components={{ Option: IconOption, SingleValue: CustomSingleValue }}
       onChange={onChange}
       styles={colorStyles}
