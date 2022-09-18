@@ -86,7 +86,6 @@ export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
       components={{ Option: IconOption, SingleValue: CustomSingleValue }}
       onChange={onChange}
       styles={colorStyles}
-      menuIsOpen={true}
       data-testid="dial-code-select"
     />
   );
