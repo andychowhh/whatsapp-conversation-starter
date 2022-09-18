@@ -1,75 +1,106 @@
+import React from 'react';
+import {
+  AF,
+  AX,
+  AL,
+  DZ,
+  AS,
+  AD,
+  AO,
+  AI,
+  AQ,
+  AG,
+  AR,
+  AM,
+  AW,
+  AU
+} from 'country-flag-icons/react/3x2';
 import { CountryCode } from 'types';
 
 export const COUNTRY_CODE: CountryCode[] = [
   {
     name: 'Afghanistan',
     dial_code: '93',
-    code: 'AF'
+    code: 'AF',
+    icon: <AF title="Afghanistan" />
   },
   {
     name: 'Aland Islands',
     dial_code: '358',
-    code: 'AX'
+    code: 'AX',
+    icon: <AX title="Aland Islands" />
   },
   {
     name: 'Albania',
     dial_code: '355',
-    code: 'AL'
+    code: 'AL',
+    icon: <AL title="Albania" />
   },
   {
     name: 'Algeria',
     dial_code: '213',
-    code: 'DZ'
+    code: 'DZ',
+    icon: <DZ title="Algeria" />
   },
   {
     name: 'AmericanSamoa',
     dial_code: '1684',
-    code: 'AS'
+    code: 'AS',
+    icon: <AS title="AmericanSamoa" />
   },
   {
     name: 'Andorra',
     dial_code: '376',
-    code: 'AD'
+    code: 'AD',
+    icon: <AD title="Andorra" />
   },
   {
     name: 'Angola',
     dial_code: '244',
-    code: 'AO'
+    code: 'AO',
+    icon: <AO title="Angola" />
   },
   {
     name: 'Anguilla',
     dial_code: '1264',
-    code: 'AI'
+    code: 'AI',
+    icon: <AI title="Anguilla" />
   },
   {
     name: 'Antarctica',
     dial_code: '672',
-    code: 'AQ'
+    code: 'AQ',
+    icon: <AQ title="Antarctica" />
   },
   {
-    name: 'Antigua and Barbuda',
+    name: 'Antigua',
     dial_code: '1268',
-    code: 'AG'
+    code: 'AG',
+    icon: <AG title="Antigua" />
   },
   {
     name: 'Argentina',
     dial_code: '54',
-    code: 'AR'
+    code: 'AR',
+    icon: <AR title="Argentina" />
   },
   {
     name: 'Armenia',
     dial_code: '374',
-    code: 'AM'
+    code: 'AM',
+    icon: <AM title="Armenia" />
   },
   {
     name: 'Aruba',
     dial_code: '297',
-    code: 'AW'
+    code: 'AW',
+    icon: <AW title="Aruba" />
   },
   {
     name: 'Australia',
     dial_code: '61',
-    code: 'AU'
+    code: 'AU',
+    icon: <AU title="Australia" />
   },
   {
     name: 'Austria',
@@ -132,12 +163,12 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'BT'
   },
   {
-    name: 'Bolivia, Plurinational State of',
+    name: 'Bolivia',
     dial_code: '591',
     code: 'BO'
   },
   {
-    name: 'Bosnia and Herzegovina',
+    name: 'Bosnia',
     dial_code: '387',
     code: 'BA'
   },
@@ -150,11 +181,6 @@ export const COUNTRY_CODE: CountryCode[] = [
     name: 'Brazil',
     dial_code: '55',
     code: 'BR'
-  },
-  {
-    name: 'British Indian Ocean Territory',
-    dial_code: '246',
-    code: 'IO'
   },
   {
     name: 'Brunei Darussalam',
@@ -227,7 +253,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'CX'
   },
   {
-    name: 'Cocos (Keeling) Islands',
+    name: 'Cocos Islands',
     dial_code: '61',
     code: 'CC'
   },
@@ -247,7 +273,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'CG'
   },
   {
-    name: 'Congo, The Democratic Republic of the Congo',
+    name: 'Congo',
     dial_code: '243',
     code: 'CD'
   },
@@ -342,7 +368,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'ET'
   },
   {
-    name: 'Falkland Islands (Malvinas)',
+    name: 'Falkland Islands',
     dial_code: '500',
     code: 'FK'
   },
@@ -462,7 +488,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'HT'
   },
   {
-    name: 'Holy See (Vatican City State)',
+    name: 'Holy See',
     dial_code: '379',
     code: 'VA'
   },
@@ -497,7 +523,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'ID'
   },
   {
-    name: 'Iran, Islamic Republic of Persian Gulf',
+    name: 'Iran',
     dial_code: '98',
     code: 'IR'
   },
@@ -562,12 +588,12 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'KI'
   },
   {
-    name: "Korea, Democratic People's Republic of Korea",
+    name: 'Korea',
     dial_code: '850',
     code: 'KP'
   },
   {
-    name: 'Korea, Republic of South Korea',
+    name: 'Korea',
     dial_code: '82',
     code: 'KR'
   },
@@ -697,7 +723,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'MX'
   },
   {
-    name: 'Micronesia, Federated States of Micronesia',
+    name: 'Micronesia',
     dial_code: '691',
     code: 'FM'
   },
@@ -907,7 +933,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'BL'
   },
   {
-    name: 'Saint Helena, Ascension and Tristan Da Cunha',
+    name: 'Saint Helena',
     dial_code: '290',
     code: 'SH'
   },
@@ -1012,7 +1038,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'SS'
   },
   {
-    name: 'South Georgia and the South Sandwich Islands',
+    name: 'South Georgia',
     dial_code: '500',
     code: 'GS'
   },
@@ -1072,7 +1098,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'TJ'
   },
   {
-    name: 'Tanzania, United Republic of Tanzania',
+    name: 'Tanzania',
     dial_code: '255',
     code: 'TZ'
   },
@@ -1172,7 +1198,7 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'VU'
   },
   {
-    name: 'Venezuela, Bolivarian Republic of Venezuela',
+    name: 'Venezuela',
     dial_code: '58',
     code: 'VE'
   },

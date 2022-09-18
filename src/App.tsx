@@ -1,16 +1,22 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
+import { SingleValue, ActionMeta } from 'react-select';
 
 import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
 import { COUNTRY_CODE } from 'constants/';
+
+import { ReactSelectOption } from 'types';
 
 import { isStrNumber } from 'utils';
 
 import './App.css';
 
 function App() {
-  const [countryCode, setCountryCode] = useState<string>('HK');
+  const [countryCode, setCountryCode] = useState<ReactSelectOption>({
+    label: 'Hong Kong',
+    value: 'HK'
+  });
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const countryCodesByAlphaOrder = COUNTRY_CODE.sort((a, b) =>
@@ -24,8 +30,10 @@ function App() {
     }
   };
 
-  const onSelectCountryCode = (event: ChangeEvent<HTMLSelectElement>): void => {
-    setCountryCode(event.target.value);
+  const onSelectCountryCode = (
+    newValue: SingleValue<ReactSelectOption>
+  ): void => {
+    newValue && setCountryCode(newValue);
   };
 
   return (
@@ -55,7 +63,7 @@ function App() {
             />
           </InputGroup>
           <StartConversationButton
-            countryCode={countryCode}
+            countryCode={countryCode.value}
             phoneNumber={phoneNumber}
           />
         </Flex>
