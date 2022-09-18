@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
-import { SingleValue, ActionMeta } from 'react-select';
+import { SingleValue, MultiValue } from 'react-select';
 
 import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
@@ -15,7 +15,9 @@ import './App.css';
 function App() {
   const [countryCode, setCountryCode] = useState<ReactSelectOption>({
     label: 'Hong Kong',
-    value: 'HK'
+    value: 'HK',
+    dialCode: '852',
+    icon: <></>
   });
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
@@ -30,10 +32,14 @@ function App() {
     }
   };
 
+  function isSingleValue(obj: any): obj is SingleValue<ReactSelectOption> {
+    return obj !== undefined;
+  }
+
   const onSelectCountryCode = (
-    newValue: SingleValue<ReactSelectOption>
+    newValue: SingleValue<ReactSelectOption> | MultiValue<ReactSelectOption>
   ): void => {
-    newValue && setCountryCode(newValue);
+    if (newValue && isSingleValue(newValue)) setCountryCode(newValue);
   };
 
   return (

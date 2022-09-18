@@ -1,106 +1,76 @@
 import React from 'react';
-import {
-  AF,
-  AX,
-  AL,
-  DZ,
-  AS,
-  AD,
-  AO,
-  AI,
-  AQ,
-  AG,
-  AR,
-  AM,
-  AW,
-  AU
-} from 'country-flag-icons/react/3x2';
 import { CountryCode } from 'types';
 
 export const COUNTRY_CODE: CountryCode[] = [
   {
     name: 'Afghanistan',
     dial_code: '93',
-    code: 'AF',
-    icon: <AF title="Afghanistan" />
+    code: 'AF'
   },
   {
     name: 'Aland Islands',
     dial_code: '358',
-    code: 'AX',
-    icon: <AX title="Aland Islands" />
+    code: 'AX'
   },
   {
     name: 'Albania',
     dial_code: '355',
-    code: 'AL',
-    icon: <AL title="Albania" />
+    code: 'AL'
   },
   {
     name: 'Algeria',
     dial_code: '213',
-    code: 'DZ',
-    icon: <DZ title="Algeria" />
+    code: 'DZ'
   },
   {
     name: 'AmericanSamoa',
     dial_code: '1684',
-    code: 'AS',
-    icon: <AS title="AmericanSamoa" />
+    code: 'AS'
   },
   {
     name: 'Andorra',
     dial_code: '376',
-    code: 'AD',
-    icon: <AD title="Andorra" />
+    code: 'AD'
   },
   {
     name: 'Angola',
     dial_code: '244',
-    code: 'AO',
-    icon: <AO title="Angola" />
+    code: 'AO'
   },
   {
     name: 'Anguilla',
     dial_code: '1264',
-    code: 'AI',
-    icon: <AI title="Anguilla" />
+    code: 'AI'
   },
   {
     name: 'Antarctica',
     dial_code: '672',
-    code: 'AQ',
-    icon: <AQ title="Antarctica" />
+    code: 'AQ'
   },
   {
     name: 'Antigua',
     dial_code: '1268',
-    code: 'AG',
-    icon: <AG title="Antigua" />
+    code: 'AG'
   },
   {
     name: 'Argentina',
     dial_code: '54',
-    code: 'AR',
-    icon: <AR title="Argentina" />
+    code: 'AR'
   },
   {
     name: 'Armenia',
     dial_code: '374',
-    code: 'AM',
-    icon: <AM title="Armenia" />
+    code: 'AM'
   },
   {
     name: 'Aruba',
     dial_code: '297',
-    code: 'AW',
-    icon: <AW title="Aruba" />
+    code: 'AW'
   },
   {
     name: 'Australia',
     dial_code: '61',
-    code: 'AU',
-    icon: <AU title="Australia" />
+    code: 'AU'
   },
   {
     name: 'Austria',

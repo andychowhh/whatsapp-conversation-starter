@@ -3,6 +3,7 @@ import Select, {
   components,
   ActionMeta,
   CSSObjectWithLabel,
+  MultiValue,
   SingleValue as SingleValueType,
   OptionProps
 } from 'react-select';
@@ -32,30 +33,25 @@ const colorStyles = {
 interface DialCodeSelectProp {
   value: ReactSelectOption;
   onChange: (
-    newValue: SingleValueType<ReactSelectOption>,
+    newValue:
+      | SingleValueType<ReactSelectOption>
+      | MultiValue<ReactSelectOption>,
     actionMeta: ActionMeta<ReactSelectOption>
   ) => void;
 }
 
 const { Option, SingleValue } = components;
 
-interface IconOptionData extends ReactSelectOption {
-  icon: string;
-  dialCode: string;
-}
-interface IconOptionProp extends Partial<OptionProps> {
-  data: IconOptionData;
-}
+const IconOption = (props: OptionProps<ReactSelectOption>) => {
+  const { label, value, dialCode } = props.data;
+  const CountryFlag = CountryFlags['HK'];
 
-const IconOption = (props: any) => {
-  const { label, value, icon, dialCode } = props.data;
-  // const countryFlag = CountryFlags[value];
   return (
     <Option {...props}>
       <HStack>
         <Box whiteSpace="nowrap">{label}</Box>
         <Box w="20px" h="20px" display="flex" alignItems="center">
-          {icon}
+          <CountryFlag />
         </Box>
         <Box>{`(+${dialCode})`}</Box>
       </HStack>
