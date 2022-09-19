@@ -798,11 +798,6 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'NF'
   },
   {
-    name: 'Northern Mariana Islands',
-    dial_code: '1670',
-    code: 'MP'
-  },
-  {
     name: 'Norway',
     dial_code: '47',
     code: 'NO'
@@ -821,11 +816,6 @@ export const COUNTRY_CODE: CountryCode[] = [
     name: 'Palau',
     dial_code: '680',
     code: 'PW'
-  },
-  {
-    name: 'Palestinian Territory, Occupied',
-    dial_code: '970',
-    code: 'PS'
   },
   {
     name: 'Panama',
@@ -926,11 +916,6 @@ export const COUNTRY_CODE: CountryCode[] = [
     name: 'Saint Pierre and Miquelon',
     dial_code: '508',
     code: 'PM'
-  },
-  {
-    name: 'Saint Vincent and the Grenadines',
-    dial_code: '1784',
-    code: 'VC'
   },
   {
     name: 'Samoa',
