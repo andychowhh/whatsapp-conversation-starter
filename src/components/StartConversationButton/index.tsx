@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 
-import { WHATSAPP_BASE_URL, COUNTRY_CODE } from 'constants/';
+import { WHATSAPP_BASE_URL, COUNTRY_CODES } from 'constants/';
 
 interface StartConversationButtonProp {
   countryCode: string;
@@ -13,7 +13,7 @@ export function StartConversationButton({
   phoneNumber
 }: StartConversationButtonProp) {
   const onStartConversationButtonClick = (): void => {
-    const dialCode = COUNTRY_CODE.find(
+    const dialCode = COUNTRY_CODES.find(
       (item) => item.code === countryCode
     )?.dial_code;
     if (dialCode)

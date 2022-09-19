@@ -4,8 +4,6 @@ import { SingleValue, MultiValue } from 'react-select';
 
 import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
-import { COUNTRY_CODE } from 'constants/';
-
 import { ReactSelectOption } from 'types';
 
 import { isStrNumber } from 'utils';
@@ -16,14 +14,9 @@ function App() {
   const [countryCode, setCountryCode] = useState<ReactSelectOption>({
     label: 'Hong Kong',
     value: 'HK',
-    dialCode: '852',
-    icon: <></>
+    dialCode: '852'
   });
   const [phoneNumber, setPhoneNumber] = useState<string>('');
-
-  const countryCodesByAlphaOrder = COUNTRY_CODE.sort((a, b) =>
-    a.code.localeCompare(b.code)
-  );
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const value = event.target.value;

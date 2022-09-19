@@ -1,7 +1,7 @@
 import React from 'react';
-import { CountryCode } from 'types';
+import { CountryCode, FormattedCountryCode } from 'types';
 
-export const COUNTRY_CODE: CountryCode[] = [
+export const COUNTRY_CODES: CountryCode[] = [
   {
     name: 'Afghanistan',
     dial_code: '93',
@@ -1193,3 +1193,17 @@ export const COUNTRY_CODE: CountryCode[] = [
     code: 'ZW'
   }
 ];
+
+export const FORMATTED_COUNTRY_CODES: FormattedCountryCode[] =
+  COUNTRY_CODES.map((countryCode) => {
+    return {
+      label: countryCode.name,
+      value: countryCode.code,
+      dialCode: countryCode.dial_code
+    };
+  }).sort((a, b) => {
+    if (a.label < b.label) return -1;
+    if (a.label > b.label) return 1;
+
+    return 0;
+  });
