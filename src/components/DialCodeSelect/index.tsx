@@ -14,7 +14,7 @@ import { hasFlag } from 'country-flag-icons';
 
 import { FORMATTED_COUNTRY_CODES } from 'constants/';
 
-import { ReactSelectOption } from 'types';
+import { FormattedCountryCode } from 'types';
 
 const colorStyles = {
   control: (styles: CSSObjectWithLabel) => ({
@@ -33,18 +33,18 @@ const colorStyles = {
 };
 
 interface DialCodeSelectProp {
-  value: ReactSelectOption;
+  value: FormattedCountryCode;
   onChange: (
     newValue:
-      | SingleValueType<ReactSelectOption>
-      | MultiValue<ReactSelectOption>,
-    actionMeta: ActionMeta<ReactSelectOption>
+      | SingleValueType<FormattedCountryCode>
+      | MultiValue<FormattedCountryCode>,
+    actionMeta: ActionMeta<FormattedCountryCode>
   ) => void;
 }
 
 const { Option, SingleValue } = components;
 
-const IconOption = (props: OptionProps<ReactSelectOption>) => {
+const IconOption = (props: OptionProps<FormattedCountryCode>) => {
   const { label, value, dialCode } = props.data;
   const CountryFlag = hasFlag(value)
     ? CountryFlags[value as keyof typeof CountryFlags]
@@ -63,7 +63,7 @@ const IconOption = (props: OptionProps<ReactSelectOption>) => {
   );
 };
 
-const CustomSingleValue = (props: SingleValueProps<ReactSelectOption>) => {
+const CustomSingleValue = (props: SingleValueProps<FormattedCountryCode>) => {
   const { dialCode } = props.data;
   return <SingleValue {...props}>{`+${dialCode}`}</SingleValue>;
 };

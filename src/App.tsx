@@ -4,14 +4,14 @@ import { SingleValue, MultiValue } from 'react-select';
 
 import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
-import { ReactSelectOption } from 'types';
+import { FormattedCountryCode } from 'types';
 
 import { isStrNumber } from 'utils';
 
 import './App.css';
 
 function App() {
-  const [countryCode, setCountryCode] = useState<ReactSelectOption>({
+  const [countryCode, setCountryCode] = useState<FormattedCountryCode>({
     label: 'Hong Kong',
     value: 'HK',
     dialCode: '852'
@@ -25,12 +25,14 @@ function App() {
     }
   };
 
-  function isSingleValue(obj: any): obj is SingleValue<ReactSelectOption> {
+  function isSingleValue(obj: any): obj is SingleValue<FormattedCountryCode> {
     return obj !== undefined;
   }
 
   const onSelectCountryCode = (
-    newValue: SingleValue<ReactSelectOption> | MultiValue<ReactSelectOption>
+    newValue:
+      | SingleValue<FormattedCountryCode>
+      | MultiValue<FormattedCountryCode>
   ): void => {
     if (newValue && isSingleValue(newValue)) setCountryCode(newValue);
   };
