@@ -62,7 +62,8 @@ export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
       components={{ Option: IconOption, SingleValue: CustomSingleValue }}
       onChange={onChange}
       styles={colorStyles}
-      data-testid="dial-code-select"
+      name="dialCode"
+      inputId="dialCode"
     />
   );
 }
