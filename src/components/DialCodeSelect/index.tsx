@@ -2,7 +2,6 @@ import React from 'react';
 import Select, {
   components,
   ActionMeta,
-  CSSObjectWithLabel,
   MultiValue,
   OptionProps,
   SingleValue as SingleValueType,
@@ -16,21 +15,7 @@ import { FORMATTED_COUNTRY_CODES } from 'constants/';
 
 import { FormattedCountryCode } from 'types';
 
-const colorStyles = {
-  control: (styles: CSSObjectWithLabel) => ({
-    ...styles,
-    minWidth: '110px'
-  }),
-  menu: (styles: CSSObjectWithLabel) => ({
-    ...styles,
-    width: 'auto'
-  }),
-  option: (styles: CSSObjectWithLabel) => {
-    return {
-      ...styles
-    };
-  }
-};
+import { colorStyles } from './DialCodeSelectStyles';
 
 interface DialCodeSelectProp {
   value: FormattedCountryCode;
