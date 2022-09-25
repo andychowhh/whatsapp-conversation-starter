@@ -38,6 +38,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "cypress:open": "cypress open",
     "lint": "eslint .",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
     "eject": "react-scripts eject"
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^10.8.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1",
     "react-select-event": "^5.5.1"
