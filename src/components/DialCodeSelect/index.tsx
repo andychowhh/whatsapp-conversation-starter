@@ -37,7 +37,7 @@ const IconOption = (props: OptionProps<FormattedCountryCode>) => {
 
   return (
     <Option {...props}>
-      <HStack>
+      <HStack data-cy={`select-option-${label}`}>
         <Box whiteSpace="nowrap">{label}</Box>
         <Box w="20px" h="20px" display="flex" alignItems="center">
           <CountryFlag />

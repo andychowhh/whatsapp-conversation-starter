@@ -14,13 +14,16 @@ describe('The Home Page', () => {
   });
 
   it('opens a new tab to the whatsapp page, given that the phone number is entered', () => {
+    cy.contains('+852').click();
+    cy.get('[data-cy="select-option-Afghanistan"]').click();
+
     cy.get('input[placeholder="phone number"]').type('98765432');
 
     cy.contains('Start Conversation').click();
 
     cy.get('@wndopen').should(
       'have.been.calledOnceWithExactly',
-      'https://wa.me/85298765432',
+      'https://wa.me/9398765432',
       '_blank'
     );
   });
