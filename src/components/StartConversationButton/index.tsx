@@ -16,7 +16,7 @@ export function StartConversationButton({
     const dialCode = COUNTRY_CODES.find(
       (item) => item.code === countryCode
     )?.dial_code;
-    if (dialCode)
+    if (dialCode && phoneNumber !== '')
       window.open(`${WHATSAPP_BASE_URL}/${dialCode}${phoneNumber}`, '_blank');
   };
   return (
