@@ -21,6 +21,12 @@ $> npm start
 
 Then open http://localhost:3000 in browser.
 
+### To Build:
+
+```bash
+$> npm run build
+```
+
 ## Testing
 
 ### Jest
