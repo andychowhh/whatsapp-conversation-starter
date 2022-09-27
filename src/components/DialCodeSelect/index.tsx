@@ -64,7 +64,6 @@ export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
       styles={colorStyles}
       name="dialCode"
       inputId="dialCode"
-      menuIsOpen={true}
     />
   );
 }
