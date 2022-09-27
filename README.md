@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Whatsapp Conversation Starter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Whenever you want to start a whatsapp conversation with someone, you have to add them in your contact first.
+
+This project aims to solve this issue. You can start conversation with anyone by selecting a dial code and phone number in the application, without the need to add them in your contact.
+
+## Demo
+
+![](demo.gif)
 
 ## Available Scripts
 
