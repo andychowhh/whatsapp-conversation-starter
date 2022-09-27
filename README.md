@@ -6,7 +6,7 @@ This project aims to solve this issue. You can start conversation with anyone by
 
 ## Demo
 
-![](demo.gif)
+![](github/demo.gif)
 
 ## Available Scripts
 
