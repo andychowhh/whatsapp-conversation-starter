@@ -6,6 +6,8 @@ This project aims to solve this issue. You can start conversation with anyone by
 
 ## Demo
 
+[**Try out the demo!**](https://whatsapp-conversation-starter.herokuapp.com/)
+
 ![](github/demo.gif)
 
 ## Build and run
