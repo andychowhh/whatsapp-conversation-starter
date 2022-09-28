@@ -8,7 +8,7 @@ import Select, {
   SingleValueProps
 } from 'react-select';
 import { Box, HStack } from '@chakra-ui/react';
-import CountryFlags from 'country-flag-icons/react/3x2';
+import CountryFlags, { US } from 'country-flag-icons/react/3x2';
 import { hasFlag } from 'country-flag-icons';
 
 import { FORMATTED_COUNTRY_CODES } from 'constants/';
@@ -55,15 +55,18 @@ const CustomSingleValue = (props: SingleValueProps<FormattedCountryCode>) => {
 
 export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
   return (
-    <Select
-      options={FORMATTED_COUNTRY_CODES}
-      value={value}
-      isSearchable={false}
-      components={{ Option: IconOption, SingleValue: CustomSingleValue }}
-      onChange={onChange}
-      styles={colorStyles}
-      name="dialCode"
-      inputId="dialCode"
-    />
+    <>
+      <Select
+        options={FORMATTED_COUNTRY_CODES}
+        value={value}
+        isSearchable={false}
+        components={{ Option: IconOption, SingleValue: CustomSingleValue }}
+        onChange={onChange}
+        styles={colorStyles}
+        name="dialCode"
+        inputId="dialCode"
+      />
+      <US />
+    </>
   );
 }
