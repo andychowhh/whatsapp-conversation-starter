@@ -37,9 +37,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --runInBand",
     "cypress:open": "cypress open",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings=0",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
     "eject": "react-scripts eject",
     "prepare": "husky install"

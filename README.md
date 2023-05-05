@@ -65,3 +65,12 @@ $> npm run cypress:open
 
 - Eslint
 - Prettier
+
+### Pre-commit Tool
+
+- Husky
+- Lint-Staged
+
+### Other features
+
+- Progressive Web App (PWA)

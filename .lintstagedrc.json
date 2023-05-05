@@ -1,3 +1,0 @@
-{
-  "*.tsx, *.ts": ["eslint --max-warnings=0"]
-}

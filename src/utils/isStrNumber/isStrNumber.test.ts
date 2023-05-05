@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { isStrNumber } from './isStrNumber';
+import { isStrNumber } from '.';
 
 describe('isStrNumber', () => {
   it('return true when the char is a number', () => {
