@@ -5,6 +5,8 @@ import { DialCodeSelect } from 'components';
 
 import { FormattedCountryCode } from 'types';
 
+import { COUNTRY_CODES } from 'constants/';
+
 const mockOnChange = jest.fn();
 
 describe('DialCodeSelect', () => {
