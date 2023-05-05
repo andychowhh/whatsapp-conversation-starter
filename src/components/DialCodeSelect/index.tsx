@@ -55,18 +55,15 @@ const CustomSingleValue = (props: SingleValueProps<FormattedCountryCode>) => {
 
 export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
   return (
-    <>
-      <Select
-        options={FORMATTED_COUNTRY_CODES}
-        value={value}
-        isSearchable={false}
-        components={{ Option: IconOption, SingleValue: CustomSingleValue }}
-        onChange={onChange}
-        styles={colorStyles}
-        name="dialCode"
-        inputId="dialCode"
-      />
-      <US />
-    </>
+    <Select
+      options={FORMATTED_COUNTRY_CODES}
+      value={value}
+      isSearchable={false}
+      components={{ Option: IconOption, SingleValue: CustomSingleValue }}
+      onChange={onChange}
+      styles={colorStyles}
+      name="dialCode"
+      inputId="dialCode"
+    />
   );
 }
