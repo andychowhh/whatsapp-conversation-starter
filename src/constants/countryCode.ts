@@ -1206,3 +1206,11 @@ export const FORMATTED_COUNTRY_CODES: FormattedCountryCode[] =
 
     return 0;
   });
+
+export const defaultCountry = FORMATTED_COUNTRY_CODES.find(
+  (country) => country.value === process.env.REACT_APP_DEFAULT_COUNTRY_CODE
+) ?? {
+  label: 'Hong Kong',
+  value: 'HK',
+  dialCode: '852'
+};
