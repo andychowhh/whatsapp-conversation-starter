@@ -70,3 +70,7 @@ $> npm run cypress:open
 
 - Husky
 - Lint-Staged
+
+### Other features
+
+- Progressive Web App (PWA)
