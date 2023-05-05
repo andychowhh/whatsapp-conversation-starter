@@ -5,3 +5,4 @@ PATH="/usr/local/bin:$PATH"
 
 npx lint-staged
 npm test
+npm run cy-test
