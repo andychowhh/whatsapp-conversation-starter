@@ -37,7 +37,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false --runInBand",
+    "test": "react-scripts test",
     "cypress:open": "cypress open",
     "lint": "eslint . --max-warnings=0",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",

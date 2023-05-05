@@ -8,8 +8,6 @@ import { FormattedCountryCode } from 'types';
 
 import { isStrNumber } from 'utils';
 
-import { COUNTRY_CODES } from 'constants/';
-
 import './App.css';
 
 function App() {
