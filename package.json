@@ -42,7 +42,8 @@
     "lint": "eslint . --max-warnings=0",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cy-test": "cypress run"
   },
   "husky": {
     "hooks": {
