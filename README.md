@@ -65,3 +65,8 @@ $> npm run cypress:open
 
 - Eslint
 - Prettier
+
+### Pre-commit Tool
+
+- Husky
+- Lint-Staged
