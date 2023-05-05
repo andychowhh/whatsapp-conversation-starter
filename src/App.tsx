@@ -6,16 +6,15 @@ import { DialCodeSelect, Header, StartConversationButton } from 'components';
 
 import { FormattedCountryCode } from 'types';
 
+import { defaultCountry } from 'constants/';
+
 import { isStrNumber } from 'utils';
 
 import './App.css';
 
 function App() {
-  const [countryCode, setCountryCode] = useState<FormattedCountryCode>({
-    label: 'Hong Kong',
-    value: 'HK',
-    dialCode: '852'
-  });
+  const [countryCode, setCountryCode] =
+    useState<FormattedCountryCode>(defaultCountry);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
