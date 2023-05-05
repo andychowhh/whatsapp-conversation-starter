@@ -41,7 +41,16 @@
     "cypress:open": "cypress open",
     "lint": "eslint .",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(tsx|ts)": "eslint --max-warnings=0"
   },
   "eslintConfig": {
     "extends": [
@@ -71,6 +80,8 @@
   "devDependencies": {
     "cypress": "^10.8.0",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.7.1",
     "react-select-event": "^5.5.1"
   }
