@@ -8,7 +8,7 @@ import Select, {
   SingleValueProps
 } from 'react-select';
 import { Box, HStack } from '@chakra-ui/react';
-import CountryFlags, { US } from 'country-flag-icons/react/3x2';
+import CountryFlags from 'country-flag-icons/react/3x2';
 import { hasFlag } from 'country-flag-icons';
 
 import { FORMATTED_COUNTRY_CODES } from 'constants/';

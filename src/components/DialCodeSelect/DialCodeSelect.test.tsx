@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import selectEvent from 'react-select-event';
+import { render, screen } from '@testing-library/react';
 
 import { DialCodeSelect } from 'components';
 

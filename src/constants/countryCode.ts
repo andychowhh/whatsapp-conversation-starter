@@ -1,4 +1,3 @@
-import React from 'react';
 import { CountryCode, FormattedCountryCode } from 'types';
 
 export const COUNTRY_CODES: CountryCode[] = [

@@ -10,8 +10,6 @@ import { isStrNumber } from 'utils';
 
 import './App.css';
 
-import { COUNTRY_CODES } from 'constants/';
-console.log('gsvs');
 function App() {
   const [countryCode, setCountryCode] = useState<FormattedCountryCode>({
     label: 'Hong Kong',
