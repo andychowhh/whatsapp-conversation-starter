@@ -16,7 +16,9 @@
     "noEmit": true,
     "jsx": "react",
     "baseUrl": "src",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    // https://medium.com/@arulvalananto/all-you-need-to-know-about-decorators-in-typescript-ce096662f0c0
+    "experimentalDecorators": true
   },
   "include": ["src"]
 }
