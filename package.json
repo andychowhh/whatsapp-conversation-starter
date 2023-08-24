@@ -45,7 +45,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "cy:run": "cypress run",
-    "cy:parallel": "pgrep -f 'npm start' || (npm start & cypress-parallel -s cy:run -t 2 -d cypress/e2e)"
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/e2e"
   },
   "husky": {
     "hooks": {
