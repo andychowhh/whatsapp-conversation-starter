@@ -45,7 +45,9 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "cy:run": "cypress run",
-    "cy:parallel": "pgrep -f 'npm start' || (npm start & cypress-parallel -s cy:run -t 2 -d cypress/e2e)"
+    "cy:parallel": "pgrep -f 'npm start' || (npm start & cypress-parallel -s cy:run -t 2 -d cypress/e2e)",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "husky": {
     "hooks": {
@@ -59,14 +61,18 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "prettier"
+      "prettier",
+      "plugin:storybook/recommended"
     ],
     "rules": {
       "react/jsx-curly-brace-presence": [
         2,
         "never"
       ]
-    }
+    },
+    "ignorePatterns": [
+      "!.storybook"
+    ]
   },
   "browserslist": {
     "production": [
@@ -81,11 +87,25 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.3.2",
+    "@storybook/addon-interactions": "^7.3.2",
+    "@storybook/addon-links": "^7.3.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.3.2",
+    "@storybook/preset-create-react-app": "^7.3.2",
+    "@storybook/react": "^7.3.2",
+    "@storybook/react-webpack5": "^7.3.2",
+    "@storybook/testing-library": "^0.2.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "cypress": "^10.8.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-storybook": "^0.6.13",
     "husky": "^7.0.4",
     "lint-staged": "^13.2.2",
     "prettier": "^2.7.1",
-    "react-select-event": "^5.5.1"
+    "prop-types": "^15.8.1",
+    "react-select-event": "^5.5.1",
+    "storybook": "^7.3.2",
+    "webpack": "^5.88.2"
   }
 }
