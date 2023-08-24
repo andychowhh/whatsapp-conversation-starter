@@ -8,6 +8,7 @@
 # testing
 /coverage
 /runner-results
+/cypress/parallel-weights.json
 
 # production
 /build
