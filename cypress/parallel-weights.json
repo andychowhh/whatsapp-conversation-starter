@@ -1,4 +1,1 @@
-{
-  "cypress/e2e/home_page.cy.ts": { "time": 4286, "weight": 10 },
-  "cypress/e2e/spec.cy.ts": { "time": 4118, "weight": 9 }
-}
+{"cypress/e2e/home_page.cy.ts":{"time":24253,"weight":16},"cypress/e2e/spec.cy.ts":{"time":5988,"weight":3}}
