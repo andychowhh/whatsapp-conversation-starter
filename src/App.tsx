@@ -1,8 +1,15 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Flex, Input, InputGroup, Stack } from '@chakra-ui/react';
+import {
+  Flex,
+  FormControl,
+  FormLabel,
+  Input,
+  Box,
+  Heading
+} from '@chakra-ui/react';
 import { SingleValue, MultiValue } from 'react-select';
 
-import { DialCodeSelect, Header, StartConversationButton } from 'components';
+import { DialCodeSelect, StartConversationButton } from 'components';
 
 import { FormattedCountryCode } from 'types';
 
@@ -38,36 +45,39 @@ function App() {
 
   return (
     <Flex justify="center" align="center" minH="100vh">
-      <Stack spacing={8} mx="auto" maxW="lg" px={{ base: 2, md: 6 }} py={12}>
-        <Header />
-        <Flex
-          direction="column"
-          justify="center"
-          align="center"
-          rounded="lg"
-          boxShadow="lg"
-          px={{ base: 4, md: 6 }}
-          py={8}
-        >
-          <InputGroup m="auto">
-            <DialCodeSelect
-              value={countryCode}
-              onChange={onSelectCountryCode}
-            />
-            <Input
-              type="tel"
-              placeholder="phone number"
-              ml="2px"
-              value={phoneNumber}
-              onChange={handleInputChange}
-            />
-          </InputGroup>
+      <Flex
+        direction="column"
+        justify="center"
+        align="center"
+        rounded="md"
+        boxShadow="lg"
+        px={{ base: 4, md: 8 }}
+        py={8}
+        gap={4}
+      >
+        <Heading fontSize="3xl" textAlign="center">
+          Start a Whatsapp Conversation
+        </Heading>
+        <FormControl>
+          <FormLabel>Extension</FormLabel>
+          <DialCodeSelect value={countryCode} onChange={onSelectCountryCode} />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Phone Number</FormLabel>
+          <Input
+            type="tel"
+            placeholder="Enter a phone number"
+            value={phoneNumber}
+            onChange={handleInputChange}
+          />
+        </FormControl>
+        <Box width="100%">
           <StartConversationButton
             countryCode={countryCode.value}
             phoneNumber={phoneNumber}
           />
-        </Flex>
-      </Stack>
+        </Box>
+      </Flex>
     </Flex>
   );
 }

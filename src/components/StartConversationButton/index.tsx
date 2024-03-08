@@ -23,7 +23,6 @@ export function StartConversationButton({
     <Button
       colorScheme="teal"
       size="md"
-      mt={4}
       w="100%"
       onClick={onStartConversationButtonClick}
     >

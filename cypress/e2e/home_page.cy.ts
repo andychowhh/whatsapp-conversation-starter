@@ -17,7 +17,7 @@ describe('The Home Page', () => {
     cy.contains('+852').click();
     cy.get('[data-cy="select-option-Afghanistan"]').click();
 
-    cy.get('input[placeholder="phone number"]').type('98765432');
+    cy.get('input[placeholder="Enter a phone number"]').type('98765432');
 
     cy.contains('Start Conversation').click();
 
