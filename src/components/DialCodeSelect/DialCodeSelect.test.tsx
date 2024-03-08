@@ -20,7 +20,7 @@ describe('DialCodeSelect', () => {
     };
     render(<DialCodeSelect {...mockProp} />);
 
-    const selectedOption = screen.getByText('+852');
+    const selectedOption = screen.getByText('(+852)');
     expect(selectedOption).toBeTruthy();
   });
 

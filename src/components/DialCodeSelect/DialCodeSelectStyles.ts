@@ -6,8 +6,7 @@ export const colorStyles = {
     minWidth: '110px'
   }),
   menu: (styles: CSSObjectWithLabel) => ({
-    ...styles,
-    width: 'auto'
+    ...styles
   }),
   option: (styles: CSSObjectWithLabel) => {
     return {

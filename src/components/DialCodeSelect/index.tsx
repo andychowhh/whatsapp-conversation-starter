@@ -29,28 +29,36 @@ interface DialCodeSelectProp {
 
 const { Option, SingleValue } = components;
 
-const IconOption = (props: OptionProps<FormattedCountryCode>) => {
-  const { label, value, dialCode } = props.data;
+const ExtensionLabel = ({ label, value, dialCode }: FormattedCountryCode) => {
   const CountryFlag = hasFlag(value)
     ? CountryFlags[value as keyof typeof CountryFlags]
     : () => <></>;
 
   return (
+    <HStack data-cy={`select-option-${label}`}>
+      <Box whiteSpace="nowrap">{label}</Box>
+      <Box w="20px" h="20px" display="flex" alignItems="center">
+        <CountryFlag />
+      </Box>
+      <Box>{`(+${dialCode})`}</Box>
+    </HStack>
+  );
+};
+
+const IconOption = (props: OptionProps<FormattedCountryCode>) => {
+  return (
     <Option {...props}>
-      <HStack data-cy={`select-option-${label}`}>
-        <Box whiteSpace="nowrap">{label}</Box>
-        <Box w="20px" h="20px" display="flex" alignItems="center">
-          <CountryFlag />
-        </Box>
-        <Box>{`(+${dialCode})`}</Box>
-      </HStack>
+      <ExtensionLabel {...props.data} />
     </Option>
   );
 };
 
 const CustomSingleValue = (props: SingleValueProps<FormattedCountryCode>) => {
-  const { dialCode } = props.data;
-  return <SingleValue {...props}>{`+${dialCode}`}</SingleValue>;
+  return (
+    <SingleValue {...props}>
+      <ExtensionLabel {...props.data} />
+    </SingleValue>
+  );
 };
 
 export function DialCodeSelect({ value, onChange }: DialCodeSelectProp) {
