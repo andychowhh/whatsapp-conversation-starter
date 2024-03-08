@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import {
   Flex,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input,
   Box,
@@ -23,7 +24,7 @@ function App() {
   const [countryCode, setCountryCode] =
     useState<FormattedCountryCode>(defaultCountry);
   const [phoneNumber, setPhoneNumber] = useState<string>('');
-
+  const [inputError, setInputError] = useState<string>('');
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const value = event.target.value;
     if (isStrNumber(value) || value === '') {
@@ -55,14 +56,14 @@ function App() {
         py={8}
         gap={4}
       >
-        <Heading fontSize="3xl" textAlign="center">
+        <Heading fontSize="3xl" textAlign="center" data-testid="heading">
           Start a Whatsapp Conversation
         </Heading>
         <FormControl>
           <FormLabel>Extension</FormLabel>
           <DialCodeSelect value={countryCode} onChange={onSelectCountryCode} />
         </FormControl>
-        <FormControl>
+        <FormControl isInvalid={!!inputError}>
           <FormLabel>Phone Number</FormLabel>
           <Input
             type="tel"
@@ -70,11 +71,15 @@ function App() {
             value={phoneNumber}
             onChange={handleInputChange}
           />
+          <FormErrorMessage data-testid="input-error">
+            {inputError}
+          </FormErrorMessage>
         </FormControl>
         <Box width="100%">
           <StartConversationButton
             countryCode={countryCode.value}
             phoneNumber={phoneNumber}
+            setInputError={(error) => setInputError(error)}
           />
         </Box>
       </Flex>
